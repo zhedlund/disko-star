@@ -1,0 +1,6 @@
+[submodule "lib/util"]
+	path = lib/util
+	url = https://github.com/heartwerktech/util
+[submodule "lib/ESPAsyncDNSServer"]
+	path = lib/ESPAsyncDNSServer
+	url = https://github.com/devyte/ESPAsyncDNSServer
