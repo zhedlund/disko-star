@@ -15,7 +15,9 @@ git clone --recurse-submodules https://github.com/heartwerktech/disko-star.git
 ```
 
 ## Build
-
+- create files in data/
+  - "ssid.txt" with wifi name
+  - "pass.txt" with wifi password
 - select env (wemos_d1_mini32)
 - Build, Upload
 - Build Filesystem Image

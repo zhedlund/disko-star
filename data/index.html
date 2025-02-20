@@ -270,9 +270,9 @@
 
       const id = event.target.id;
       const value = event.target.value;
-      // get msgType by removing "id_" from id in beginning
-      const msgType = id.substring(3);
-      var msg = { type: msgType, value: value };
+      // get msgName by removing "id_" from id in beginning
+      const msgName = id.substring(3);
+      var msg = { name: msgName, value: value };
 
       if (Socket && Socket.readyState === WebSocket.OPEN) {
         Socket.send(JSON.stringify(msg));
@@ -281,30 +281,46 @@
 
     function processCommand(event) {
       var obj = JSON.parse(event.data);
-      var type = obj.type;
+      var name = obj.name;
+      
+      if (name) {
+        if (name.localeCompare("graph_amplitude") == 0) {
+          update_graph_amplitude(obj.value);
+        }
+      }
 
-      // Check if the type matches one of our slider configurations
+      console.log("processCommand JSON obj:", obj);
+
+      // Check if the name matches one of our slider configurations
       for (let id in slidersConfig) {
 
-        const msgType = id.substring(3);
-        if (type.localeCompare(msgType) == 0) {
+        const msgName = id.substring(3);
+        if (name.localeCompare(msgName) == 0) {
           let value = parseInt(obj.value);
           console.log(value);
           let slider = document.getElementById(id);
           slider.value = value;
 
           // check if id does not contain "_control_"
-          if (id.indexOf("__ratio") != -1) {
+          if (id.indexOf("ratio") != -1) {
             let output = document.getElementById(id + '_value');
             output.innerHTML = value + " %";
           }
-          else if (id.indexOf("__percent") != -1) {
+          else if (id.indexOf("percent") != -1) {
             let output = document.getElementById(id + '_value');
             output.innerHTML = value + " %";
           }
-          else if (id.indexOf("__s") != -1) {
+          else if (id.indexOf("period_s") != -1) {
             let output = document.getElementById(id + '_value');
             output.innerHTML = ((value / 100) * 10).toFixed(2) + " s"; // MAX_PERIOD_S = 10
+          }
+          else if (id.indexOf("_s") != -1) {
+            let output = document.getElementById(id + '_value');
+            output.innerHTML = value + " s";
+          }
+          else if (id.indexOf("_Hz") != -1) {
+            let output = document.getElementById(id + '_value');
+            output.innerHTML = value + " Hz";
           }
           else {
             let output = document.getElementById(id + '_value');

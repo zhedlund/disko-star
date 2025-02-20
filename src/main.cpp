@@ -128,7 +128,9 @@ void loop()
       float freq = 1.0 / period_seconds;
       float val = sin(_timeElapsed / 1000.0 * 2 * PI * freq);
       pData->rotation = val * pData->rotation_animation_amplitude;
+#if ENABLE_MQTT
       mqtt.send_rotation(pData);
+#endif
 
 #if ENABLE_MOTOR
       motor.setSpeed(util::centerHysteris(util::mapConstrainf(pData->rotation, -100, 100, -1.0, 1.0), 0.05));
@@ -141,7 +143,9 @@ void loop()
       float freq = 1.0 / period_seconds;
       float val = 0.5 + 0.5 * sin(_timeElapsed / 1000.0 * 2 * PI * freq);
       pData->openess = 100 - val * pData->position_animation_amplitude;
+#if ENABLE_MQTT
       mqtt.send(pData->openess);
+#endif
 
 #if ENABLE_STEPPER
       stepper.set(util::mapConstrainf(pData->openess, 0, 100, 0, pData->max_stepper_position));
