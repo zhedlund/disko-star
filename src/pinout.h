@@ -1,20 +1,21 @@
 #pragma once
 
-#if 0 // hannes
+#if 1 // hannes
 #define PIN_STEPPER_IN1 27
 #define PIN_STEPPER_IN2 25
 #define PIN_STEPPER_IN3 32
 #define PIN_STEPPER_IN4 12
+
 #elif 1 // fablab
 
 #define PIN_STEPPER_IN1 5
 #define PIN_STEPPER_IN2 23
-#define PIN_STEPPER_IN3 19
-#define PIN_STEPPER_IN4 18
+#define PIN_STEPPER_IN3 18
+#define PIN_STEPPER_IN4 19
 
 #endif
 
-#if 0 // hannes
+#if 1// hannes
 #define PIN_MOTOR1_IN1 14
 #define PIN_MOTOR1_IN2 33
 #define PIN_MOTOR2_IN1 34 // not used
