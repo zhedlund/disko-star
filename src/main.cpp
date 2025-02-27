@@ -31,12 +31,16 @@ H_Bridge_Driver motor(PIN_MOTOR1_IN1, PIN_MOTOR1_IN2);
 Stepper_Driver stepper(PIN_STEPPER_IN1, PIN_STEPPER_IN2, PIN_STEPPER_IN3, PIN_STEPPER_IN4);
 #endif
 
+#if ENABLE_LEDS
 LedMatrix matrix(PIN_LED_MATRIX, 8 * 4, 8); // PIN=5, width=32, height=8
+#endif
 
-void setup()
+void setup()  
 {
+#if ENABLE_LEDS
   matrix.init();
   matrix.showText("DISKO!", matrix.Color(255, 255, 255));
+#endif
 
 #if ENABLE_MOTOR
   motor.setup();
@@ -80,7 +84,10 @@ elapsedMillis _sinceAnimationUpdate = 0;
 
 void loop()
 {
+#if ENABLE_LEDS
   matrix.loop();
+#endif
+
   ArduinoOTA.handle();
 
 #if ENABLE_SERVER

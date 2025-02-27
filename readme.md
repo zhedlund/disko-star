@@ -54,3 +54,10 @@ git clone --recurse-submodules https://github.com/heartwerktech/disko-star.git
   - Make 3D files publicly available
   - Write documentation of PCBs and software
 
+
+
+
+
+- more Documentation lol
+
+- documentation about env and how to do that !!
