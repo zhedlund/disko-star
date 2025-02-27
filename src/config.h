@@ -14,7 +14,7 @@
 #define ENABLE_MQTT 0
 
 #define ENABLE_MOTOR 1
-#define ENABLE_STEPPER 1
+#define ENABLE_STEPPER 0
 
 #define ENABLE_LEDS 1
 
