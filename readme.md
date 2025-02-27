@@ -26,8 +26,9 @@ git clone --recurse-submodules https://github.com/heartwerktech/disko-star.git
 
 ## Resources
 
-[Bill of Material(https://docs.google.com/spreadsheets/d/1WuYzduE2HkZthLLmO-JZaNuw8-il5M_H4LjsfEWBu10/edit?usp=sharing)]
-[Canva presentation(https://www.canva.com/design/DAGc09UFvwc/3iI4gSQLW8nrND8pjCcayQ/edit?utm_content=DAGc09UFvwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)]
+- [Bill of Material](https://docs.google.com/spreadsheets/d/1WuYzduE2HkZthLLmO-JZaNuw8-il5M_H4LjsfEWBu10/edit?usp=sharing)
+
+- [Canva presentation](https://www.canva.com/design/DAGc09UFvwc/3iI4gSQLW8nrND8pjCcayQ/edit?utm_content=DAGc09UFvwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 # TODOS - first big prototype
 - [ ] **Order Parts**
