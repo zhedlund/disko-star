@@ -27,3 +27,5 @@ git clone --recurse-submodules https://github.com/heartwerktech/disko-star.git
 # TODOS
 
 - more Documentation lol
+
+- documentation about env and how to do that !!
